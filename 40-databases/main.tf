@@ -156,7 +156,7 @@ resource "terraform_data" "rabbitmq" {
 
 resource "aws_route53_record" "mongodb" {
   zone_id = var.zone_id
-  name    = "mongodb-${var.environment}.${var.zone_name}" #mongodb-dev.srikanth553.store
+  name    = "mongodb-${var.environment}.${var.zone_name}" #mongodb-dev.daws84s.site
   type    = "A"
   ttl     = 1
   records = [aws_instance.mongodb.private_ip]
@@ -189,4 +189,3 @@ resource "aws_route53_record" "rabbitmq" {
   records = [aws_instance.rabbitmq.private_ip]
   allow_overwrite = true
 }
-
